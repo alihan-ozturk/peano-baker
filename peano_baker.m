@@ -35,7 +35,7 @@ A = [0 t; 0 0]; % A matrisi
 
 [rows, cols] = size(A);
 
-result = 0;
+result = eye(rows);
 for i = 1:n
     temp = calculateIntegral(substituteVariable(A, t, symList(i)), symList(i), 0, t);
     for j = 1:i-1
@@ -45,7 +45,6 @@ for i = 1:n
     result = result + temp;
 end
 
-result = result + eye(rows);
 disp(result)
 
 for i = 1:rows
